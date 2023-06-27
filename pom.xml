@@ -6,4 +6,29 @@
   <version>1.0.0</version>
   <name>Archetype - JPA</name>
   <url>http://maven.apache.org</url>
+
+
+    <dependencies>
+        <!--JAP 하이버네이버-->
+      <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-entitymanager</artifactId>
+        <version>5.3.10.Final</version>
+      </dependency>
+    <!--H2 데이터 베이스-->
+      <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <version>1.4.199</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.18.12</version>
+        <scope>provided</scope>
+      </dependency>
+
+
+  </dependencies>
 </project>
