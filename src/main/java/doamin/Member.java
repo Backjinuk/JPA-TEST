@@ -1,3 +1,4 @@
+/*
 package doamin;
 
 import lombok.Data;
@@ -19,3 +20,4 @@ public class Member {
     private String streat;
     private String zipcode;
 }
+*/

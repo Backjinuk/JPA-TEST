@@ -3,21 +3,23 @@ package hellojpa;
 import lombok.Data;
 import javax.persistence.*;
 
-//@Entity
-//@Data
-//@SequenceGenerator(
-//name = "MEMBER_SEQ_GENERATOR",
-//        sequenceName = "MEMBER_SEQ",
-//        initialValue = 1, allocationSize = 50)
+@Entity
+@Data
 public class Member {
+    public Member(){ }
 
- //   @Id
- //   @GeneratedValue(strategy = GenerationType.SEQUENCE,
- //               generator = "MEMBER_SEQ_GENERATOR")
+    @Id
+    @GeneratedValue
+    @Column(name = "memberId")
     private Long id;
 
-  //  @Column(name = "name", nullable = false )
+    @Column(name = "username", nullable = false )
     private String UserName;
 
-    public Member(){ }
+//    @Column(name = "TeamId")
+//    private Long teamId;
+
+    @ManyToOne
+    @JoinColumn(name = "teamId")
+    private Team team;
 }

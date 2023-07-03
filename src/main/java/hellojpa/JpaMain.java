@@ -6,10 +6,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import java.util.List;
 
 
 public class JpaMain {
-/*    public static void main(String[] args) {
+    public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
         EntityManager em =  emf.createEntityManager();
         EntityTransaction tx =  em.getTransaction();
@@ -17,24 +18,25 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Member member1 = new Member();
-            //member1.setUserName("A");
+            //저장
+            Team team = new Team();
+            team.setName("TeamA");
+            em.persist(team);
 
-            Member member2 = new Member();
-            //member2.setUserName("B");
-            Member member3 = new Member();
-            member3.setUserName("C");
+            Member member = new Member();
+            member.setUserName("member1");
+            member.setTeam(team);
+            em.persist(member);
 
-            System.out.println("======================================");
+            em.flush();
+            em.clear();
 
-            em.persist(member1);
-            em.persist(member2);
-            em.persist(member3);
+            Member findMember = em.find(Member.class, member.getId());
+            List<Member> members = findMember.getTeam().getMembers();
 
-            System.out.println("member. id = " + member1.getId());
-            System.out.println("member. id = " + member2.getId());
-            System.out.println("member. id = " + member3.getId());
-            System.out.println("======================================");
+            for (Member m : members ) {
+                System.out.println("m = " + m.getUserName());
+            }
 
             tx.commit();
         }catch (Exception e){
@@ -44,5 +46,5 @@ public class JpaMain {
             em.close();
         }
         emf.close();
-    }*/
+    }
 }

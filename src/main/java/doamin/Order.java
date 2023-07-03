@@ -1,3 +1,4 @@
+/*
 package doamin;
 
 import lombok.Data;
@@ -17,10 +18,13 @@ public class Order {
     @Column(name = "MEMEBER_ID")
     private Long memberId;
 
-    private Member member;
+  */
+/*  private Member member;*//*
+
 
     private LocalDateTime orderDate;
 
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
 }
+*/

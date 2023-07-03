@@ -1,3 +1,4 @@
+/*
 package doamin;
 
 import lombok.Data;
@@ -24,3 +25,4 @@ public class OrderItem {
 
     private int count;
 }
+*/
