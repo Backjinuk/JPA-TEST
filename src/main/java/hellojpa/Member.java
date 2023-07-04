@@ -16,10 +16,4 @@ public class Member {
     @Column(name = "username", nullable = false )
     private String UserName;
 
-//    @Column(name = "TeamId")
-//    private Long teamId;
-
-    @ManyToOne
-    @JoinColumn(name = "teamId")
-    private Team team;
 }

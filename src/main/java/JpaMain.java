@@ -1,4 +1,7 @@
+/*
 
+
+import doamin.Order;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -15,6 +18,8 @@ public class JpaMain {
         tx.begin();
 
         try {
+            Order order = new Order();
+
 
             tx.commit();
         }catch (Exception e){
@@ -26,3 +31,4 @@ public class JpaMain {
         emf.close();
     }
 }
+*/
